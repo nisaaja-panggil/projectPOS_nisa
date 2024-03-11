@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CetakController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
@@ -31,3 +32,14 @@ Route::resource('user',UserController::class)->except('show','destroy','create',
 Route::get('login',[LoginController::class,'loginView'])->name('login');
 route::post('login',[LoginController::class,'authenticate']);
 Route::post('logout',[LoginController::class,'logout'])->middleware('auth');
+Route::get('penjualan',function(){
+    return view('penjualan.index',[
+        "title"=>"penjualan"
+    ]);
+})->middleware('auth');
+Route::get('order',function(){
+    return view('penjualan.orders',[
+        "title"=>"order"
+    ]);
+})->middleware('auth');
+Route::get('cetakReceipt',[CetakController::class,'Receipt'])->name('cetakReceipt')->middleware('auth');

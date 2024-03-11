@@ -157,10 +157,10 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="#" class="nav-link {{ ($title==='Pembelian') ? 'active':'' }}">
+                            <a href="penjualan" target="_blank" class="nav-link {{ ($title==='penjualan') ? 'active':'' }}">
                                 <i class="nav-icon fas fa-cash-register"></i>
                                 <p>
-                                    Pembelian
+                                    penjualan
                                 </p>
                             </a>
                         </li>
