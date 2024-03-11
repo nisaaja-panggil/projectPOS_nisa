@@ -32,17 +32,36 @@
             </ul>
 
             <!-- Right navbar links -->
-            <ul class="navbar-nav ml-auto">
-
-
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-                        <i class="fas fa-expand-arrows-alt"></i>
+           <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link" data-toggle="dropdown" href="#">
+                    <i class="far fa-user mr-2"></i>{{ Auth::user()->name }}
+                    <span class="badge badge-warning navbar-badge"></span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                    <span class="dropdown-item dropdown-header">User Menu</span>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item">
+                        <i class="fas fa-user mr-2"></i> {{ Auth::user()->name }}
+                        <span class="float-right text-muted text-sm"></span>
                     </a>
-                </li>
 
-            </ul>
-        </nav>
+                    <div class="dropdown-divider"></div>
+                    <form action="logout" method="POST">
+                        @csrf
+                            <button type="submit" class="dropdown-item"><i class="fas fa-sign-out-alt mr-2"></i>Logout</button>
+                    </form>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                    <i class="fas fa-expand-arrows-alt"></i>
+                </a>
+            </li>
+
+        </ul>
+    </nav>
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
@@ -63,7 +82,7 @@
                             alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Safrizal</a>
+                        <a href="#" class="d-block">{{auth::user()->name}}</a>
                     </div>
                 </div>
 
