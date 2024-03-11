@@ -129,7 +129,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link {{ ($title==='Users')?'active':''}}">
+                            <a href="{{route('user.index')}}" class="nav-link {{ ($title==='Users')?'active':''}}">
                                 <i class="nav-icon fas fa-users"></i>
                                 <p>
                                     Users

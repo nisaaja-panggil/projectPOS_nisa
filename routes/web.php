@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,3 +25,4 @@ Route::get('/', function () {
 Route::resource('kategori',CategoryController::class)->except('show','destroy','create');
 Route::resource('pelanggan',CustomerController::class)->except('destroy');
 Route::resource('product',ProductController::class);
+Route::resource('user',UserController::class)->except('show','destroy','create','update','edit');
