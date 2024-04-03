@@ -42,4 +42,4 @@ Route::get('order',function(){
         "title"=>"order"
     ]);
 })->middleware('auth');
-Route::get('cetakReceipt',[CetakController::class,'Receipt'])->name('cetakReceipt')->middleware('auth');
+Route::get('cetakReceipt',[CetakController::class,'receipt'])->name('cetakReceipt')->middleware('auth');
