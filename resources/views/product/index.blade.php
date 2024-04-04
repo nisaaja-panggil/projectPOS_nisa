@@ -41,7 +41,7 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $dt->name }}</td>
                         <td>{{ $dt->category->name }}</td>
-                        <td @if($dt->stock == 0) class="text-danger" @endif>{{ $dt->stock }}</td>
+                        <td class="@if($dt->stock <= 0) text-danger @endif">{{ $dt->stock }}</td>
                         <td>@money($dt->price) </td>
                         
                         <td>
